@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNJIVANI TECHFEST 2025</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-robot"></i>
+                <span>SANIVANI TECHFEST</span>
+            </div>
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" onclick="showSection('home')">Home</a></li>
+                <li><a href="#events" onclick="showSection('events')">Events</a></li>
+                <li><a href="#gallery" onclick="showSection('gallery')">Gallery</a></li>
+                <li><a href="#register" onclick="showSection('register')">Register</a></li>
+                <li><a href="#about" onclick="showSection('about')">About</a></li>
+                <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- All Sections in Single File -->
+    <main>
+        <!-- ===== HOME SECTION ===== -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Welcome to <span class="highlight">Sanjivani TechFest 2025</span></h1>
+                    <p class="subtitle">Innovation • Technology • Creativity</p>
+                    <p>Annual technical festival featuring competitions, workshops, and guest lectures</p>
+                    <div class="cta-buttons">
+                        <button class="btn-primary" onclick="showSection('events')">View Events</button>
+                        <button class="btn-secondary" onclick="showSection('register')">Register Now</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <!-- ADD YOUR COLLEGE IMAGE HERE -->
+                    <div class="image-placeholder">
+                        <img src="sanjivani.jpg" alt="sanjivani" width="500" style ="border-radius: 10px;">
+
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="stats">
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Events</p>
+                </div>
+                <div class="stat-item">
+                    <h3>1000+</h3>
+                    <p>Participants</p>
+                </div>
+                <div class="stat-item">
+                    <h3>20+</h3>
+                    <p>Guest Speakers</p>
+                </div>
+                
+            </div>
+
+            <!-- Upcoming Events Preview -->
+            <div class="preview-section">
+                <h2>Upcoming Highlights</h2>
+                <div class="event-cards">
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="date">24TH DEC</span>
+                            <span class="tag"> Sanjivani Hackathon</span>
+                        </div>
+                        <h3>48-Hour Coding Marathon</h3>
+                        <p>Solve real-world problems with innovative solutions</p>
+                        <button class="card-btn" onclick="showSection('events')">Learn More</button>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="date">28 DEC</span>
+                            <span class="tag">Workshop</span>
+                        </div>
+                        <h3>AI & ML Workshop</h3>
+                        <p>Hands-on session with industry experts</p>
+                        <button class="card-btn" onclick="showSection('events')">Learn More</button>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== EVENTS SECTION ===== -->
+        <section id="events" class="section">
+            <h2 class="section-title">Events & Competitions</h2>
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterEvents('all')">All Events</button>
+                <button class="filter-btn" onclick="filterEvents('upcoming')">Upcoming</button>
+                <button class="filter-btn" onclick="filterEvents('past')">Past Events</button>
+                <button class="filter-btn" onclick="filterEvents('workshop')">Workshops</button>
+            </div>
+
+            <div class="events-container">
+                <!-- Event 1 -->
+                <div class="event-card" data-category="upcoming">
+                    <div class="event-date">
+                        <span class="day">24</span>
+                        <span class="month">DEC</span>
+                    </div>
+                    <div class="event-details">
+                        <h3>Hackathon 2025</h3>
+                        <p><i class="fas fa-clock"></i> 48 Hours</p>
+                        <p><i class="fas fa-users"></i> Team: 2-4 Members</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Computer Lab</p>
+                        <p class="description">Annual coding competition with prizes worth ₹1,00,000</p>
+                        <button class="register-btn" onclick="showSection('register')">Register</button>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="event-card" data-category="upcoming workshop">
+                    <div class="event-date">
+                        <span class="day">28</span>
+                        <span class="month">DEC</span>
+                    </div>
+                    <div class="event-details">
+                        <h3>AI Workshop</h3>
+                        <p><i class="fas fa-clock"></i> 6 Hours</p>
+                        <p><i class="fas fa-user"></i> Prof. Ganesh Ramakrishnan</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Solar Hall</p>
+                        <p class="description">Learn machine learning from industry experts</p>
+                        <button class="register-btn" onclick="showSection('register')">Register</button>
+                    </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="event-card" data-category="past">
+                    <div class="event-date past">
+                        <span class="day">10</span>
+                        <span class="month">DEC</span>
+                    </div>
+                    <div class="event-details">
+                        <h3>Web Design Contest</h3>
+                        <p><i class="fas fa-clock"></i> Completed</p>
+                        <p><i class="fas fa-trophy"></i> 50+ Teams Participated</p>
+                        <p class="description">Annual web design competition</p>
+                        <button class="view-photos" onclick="showSection('gallery')">View Photos</button>
+                    </div>
+                </div>
+
+                <!-- ADD MORE EVENTS HERE -->
+                <!-- Copy and paste the event-card structure -->
+            </div>
+        </section>
+
+        <!-- ===== GALLERY SECTION ===== -->
+        <section id="gallery" class="section">
+            <h2 class="section-title">Event Gallery</h2>
+            
+            <div class="gallery-controls">
+                <button class="gallery-filter active" onclick="filterGallery('all')">All</button>
+                <button class="gallery-filter" onclick="filterGallery('2025')">2025</button>
+                <button class="gallery-filter" onclick="filterGallery('2024')">2024</button>
+                
+            </div>
+
+            <div class="gallery-grid">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item" data-category="2024">
+                    <div class="gallery-image">
+                        <!-- ADD YOUR IMAGE -->
+                        <div class="image-placeholder">
+                          <img src = "sih24.jpg" height="200px"> 
+                            
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>SIH Hackathon 2024</h4>
+                        <p>Won BY Sanjivani College</p>
+                    </div>
+                </div>
+
+                
+                <!-- Gallery Item 3 -->
+<div class="gallery-item" data-category="2025">
+                    <div class="gallery-image">
+                        <!-- ADD YOUR IMAGE -->
+                        <div class="image-placeholder">
+                          <img src = "expert.jpg" height="200px"> 
+                            
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Expert Session and Hackathon</h4>
+                       <p> Date: 2025-09-30</p>
+                    </div>
+                </div>   
+                <!-- ADD MORE GALLERY ITEMS -->
+                <!-- Copy and paste gallery-item structure -->
+            </div>
+        </section>
+
+        <!-- ===== REGISTRATION SECTION ===== -->
+        <section id="register" class="section">
+            <h2 class="section-title">Registration</h2>
+            
+            <div class="registration-form">
+                <div class="form-step active" id="step1">
+                    <h3>Step 1: Select Events</h3>
+                    <div class="event-selection">
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="event" value="hackathon">
+                            <span class="checkmark"></span>
+                            Hackathon 2025 (Free)
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="event" value="ai-workshop">
+                            <span class="checkmark"></span>
+                            AI Workshop (₹500)
+                        </label>
+                        
+                    </div>
+                    <button class="btn-next" onclick="nextStep()">Next →</button>
+                </div>
+
+                <div class="form-step" id="step2">
+                    <h3>Step 2: Personal Details</h3>
+                    <div class="form-group">
+                        <input type="text" placeholder="Full Name *" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email *" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="College Name *" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Student ID *" required>
+                    </div>
+                    <div class="form-buttons">
+                        <button class="btn-prev" onclick="prevStep()">← Back</button>
+                        <button class="btn-next" onclick="nextStep()">Next →</button>
+                    </div>
+                </div>
+
+                <div class="form-step" id="step3">
+                    <h3>Step 3: Review & Submit</h3>
+                    <div class="review-box">
+                        <p><strong>Selected Events:</strong> <span id="selectedEvents">None</span></p>
+                        <p><strong>Total Amount:</strong> ₹<span id="totalAmount">0</span></p>
+                    </div>
+                    <div class="form-buttons">
+                        <button class="btn-prev" onclick="prevStep()">← Back</button>
+                        <button class="btn-submit" onclick="submitForm()">Submit Registration</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ABOUT SECTION ===== -->
+        <section id="about" class="section">
+            <h2 class="section-title">About TechFest</h2>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Our Mission</h3>
+                    <p>To provide a platform for students to showcase technical skills and innovation.</p>
+                    
+                    <h3>College Information</h3>
+                    <p>Sanjivani College of Engineering, Kopargaon is a leading autonomous institute established 
+                        in 1983, affiliated with Savitribai Phule Pune University. With NAAC ‘A’ Grade and NBA 
+                        accreditation, the college offers strong B.Tech, M.Tech, and MBA programs supported by 
+                        modern labs, hostels, sports facilities, and vibrant student activities. Sanjivani is 
+                        known for innovation, research culture, and solid placements with companies like TCS and L&T. </p>
+                    
+                    <h3>Sanjivani Techfest Committee</h3>
+                    <div class="committee">
+                        <div class="member">
+                            <i class="fas fa-user-tie"></i>
+                            <h4>Prof. Shelake N.L.</h4>
+                            <p>Faculty Coordinator</p>
+                        </div>
+                        <div class="member">
+                            <i class="fas fa-user-graduate"></i>
+                            <h4>1. Vaishnavi Take</h4>
+                            <h4>2. Mahesh Borde</h4>
+                            <h4>3. Swanandi Kathale</h4>
+                            <p>Student Coordinators</p>
+                        </div>
+                    </div>
+
+                    <h3>FAQ</h3>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">Who can participate?</button>
+                        <div class="faq-answer">All college students with valid ID.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">Is there a registration fee?</button>
+                        <div class="faq-answer">Most events are free.</div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <div class="image-placeholder large">
+                        
+                        <img src ="college.jpg" alt="sanjivanigroupofinstitutes" height="300px" style="border-radius: 10px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CONTACT SECTION ===== -->
+        <section id="contact" class="section">
+            <h2 class="section-title">Contact Us</h2>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Address</h3>
+                            <p>Sanjivani College of Engineering, Kopargaon Tal. Kopargaon, Pincode 423 603. District: Ahmednagar, Maharashtra
+</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+919130191301</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>sanjivanitechfest@college.edu</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Send Message</h3>
+                    <input type="text" placeholder="Your Name" id="contactName">
+                    <input type="email" placeholder="Your Email" id="contactEmail">
+                    <textarea placeholder="Your Message" rows="4" id="contactMessage"></textarea>
+                    <button class="btn-primary" onclick="sendMessage()">Send Message</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Snjivani TechFest 2025</h3>
+                <p>Annual Technical Festival</p>
+                <p>Sanjivani College of Engineering
+(An Autonomous Institute)</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#home" onclick="showSection('home')">Home</a>
+                <a href="#events" onclick="showSection('events')">Events</a>
+                <a href="#register" onclick="showSection('register')">Register</a>
+                <a href="#contact" onclick="showSection('contact')">Contact</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/sanjivanigroupofinstitutes/?hl=en"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/Sanjivani_Group?lang=en"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/SanjivaniGroupofInstitutes/"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fschool%2F7800380%2Fadmin%2F"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> College TechFest. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
